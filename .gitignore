@@ -1,0 +1,26 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Reference repos (cloned locally, never committed)
+refs/
+
+# Tooling caches
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/
+
+# OS noise
+.DS_Store
