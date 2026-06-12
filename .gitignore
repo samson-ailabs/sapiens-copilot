@@ -17,6 +17,9 @@ wheels/
 # Reference repos (cloned locally, never committed)
 refs/
 
+# Local data + SQLite thread store
+data/
+
 # Tooling caches
 .ruff_cache/
 .mypy_cache/
