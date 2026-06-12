@@ -61,8 +61,8 @@ sensitive operations behind a human. That loop is what turns plumbing into a cop
 
 ## Status & roadmap
 
-🚧 **Early scaffold.** Project skeleton, tooling, and CI are in place; the agent itself is
-not implemented yet. It ships in three stages:
+🚧 **Early development.** The foundation is in — a working `create_agent` kernel with a
+streaming CLI and persistent conversations. The five capabilities land across three stages:
 
 - **Ship 1 — Foundation, Middleware, Knowledge.** Answer data questions (Text-to-SQL) and
   explanation questions (doc RAG) inside the Acme Analytics shell, with cross-source

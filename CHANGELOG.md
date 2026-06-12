@@ -9,4 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Repo scaffold: `uv` package project (`src/sapiens`), baseline files, GitHub Actions CI
-  (ruff + mypy + pytest), import smoke test.
+  (ruff + mypy + pytest).
+- **M1 — Foundation**: `create_agent` kernel (`build_agent`), OpenRouter model wiring,
+  process-wide tool registry, SQLite thread persistence, and a streaming CLI (`sapiens`).
+  Documented in `docs/ARCHITECTURE.md`; SQLite lifecycle decision in ADR-0001.
