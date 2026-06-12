@@ -8,6 +8,7 @@ trade-offs we accepted. One file per decision, numbered sequentially.
 | # | Title | Status |
 |---|-------|--------|
 | [0001](0001-sqlite-checkpointer-lifecycle.md) | SQLite checkpointer connection lifecycle | Accepted |
+| [0002](0002-middleware-reuse-over-rebuild.md) | Middleware stack: reuse built-ins, build only the gap | Accepted |
 
 ## Template
 

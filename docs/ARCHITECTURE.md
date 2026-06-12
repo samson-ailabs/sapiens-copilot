@@ -15,7 +15,7 @@ is a development convenience, not the product.
 | # | Module | Capability | Status |
 |---|--------|-----------|--------|
 | M1 | Foundation — agent kernel, tool registry, persistence, streaming, CLI | infra | ✅ Done |
-| M2 | Middleware Stack | Reason (planning) | ⬜ Planned |
+| M2 | Middleware Stack — composition seam + tool-call patching | infra | ✅ Done |
 | M3 | Knowledge — semantic layer + Text-to-SQL + doc RAG | Know | ⬜ Planned |
 | M4 | Understanding — context, identity, intent | Understand | ⬜ Planned |
 | M5 | Reasoning — routing, sub-agents, synthesis | Reason | ⬜ Planned |
@@ -58,3 +58,17 @@ flowchart LR
 cp .env.example .env    # then add your OPENROUTER_API_KEY
 uv run sapiens
 ```
+
+## M2 — Middleware Stack
+
+Cross-cutting behaviour layers around the model as `AgentMiddleware`. M2 establishes the
+**composition seam** and the one piece with no built-in equivalent; everything else is a
+reused LangChain v1 built-in added by its owning module. See
+[ADR-0002](decisions/0002-middleware-reuse-over-rebuild.md).
+
+### Key files
+
+| File | Role |
+|------|------|
+| [`middleware/stack.py`](../src/sapiens/middleware/stack.py) | `build_middleware()` — the ordered stack passed to `create_agent`. Later modules append here. |
+| [`middleware/patch.py`](../src/sapiens/middleware/patch.py) | `PatchToolCallsMiddleware` — answers dangling tool calls so a resumed thread stays valid (custom; built from primitives). |

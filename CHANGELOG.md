@@ -13,3 +13,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **M1 — Foundation**: `create_agent` kernel (`build_agent`), OpenRouter model wiring,
   process-wide tool registry, SQLite thread persistence, and a streaming CLI (`sapiens`).
   Documented in `docs/ARCHITECTURE.md`; SQLite lifecycle decision in ADR-0001.
+- **M2 — Middleware Stack**: `build_middleware` composition seam wired into the agent, plus a
+  custom `PatchToolCallsMiddleware` that repairs dangling tool calls on resume. Reuse-vs-rebuild
+  decision in ADR-0002.
