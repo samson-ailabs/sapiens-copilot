@@ -16,6 +16,7 @@ from langgraph.checkpoint.sqlite import SqliteSaver
 from langgraph.graph.state import CompiledStateGraph
 
 from sapiens.config import Settings
+from sapiens.middleware import build_middleware
 from sapiens.models import build_model
 from sapiens.tools import get_tools
 
@@ -52,5 +53,6 @@ def build_agent(
         model=model,
         tools=get_tools(),
         system_prompt=settings.system_prompt,
+        middleware=build_middleware(),
         checkpointer=checkpointer or InMemorySaver(),
     )
